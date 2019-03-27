@@ -1,15 +1,11 @@
 <?php
 /**
- * The main template file
+ * CHILD THEME INDEX FILE
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package WP_Bootstrap_4
+ * @package WP_Bootstrap_4 (CHILD-THEME)
  */
 
 get_header(); ?>
@@ -56,7 +52,7 @@ get_header(); ?>
 						endif;
 
 						if( get_theme_mod( 'blog_display_posts_slider', '1' ) && is_home() && !is_paged() ) {
-							get_template_part( 'template-parts/posts-slider' );
+							get_template_part( 'posts-slider', 'feature' );
 						}
 
 						/* Start the Loop */
