@@ -14,8 +14,6 @@ Text Domain:  wp-bootstrap-child
     padding-top: 3rem;
 }
 
-
-
 /* Button Styles */
 
 .btn-primary{
@@ -23,6 +21,8 @@ Text Domain:  wp-bootstrap-child
     background-color:#12615e !important;
     border-color: #12615e !important;
     text-transform: uppercase;
+
+    
 }
 
 .btn-primary:hover{
