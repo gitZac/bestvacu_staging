@@ -18,7 +18,6 @@ get_header(); ?>
 	<?php if( get_theme_mod( 'blog_cover_title' ) || get_theme_mod( 'blog_cover_lead' ) || get_theme_mod( 'blog_cover_btn_text' ) ) : ?>
 		<section class="jumbotron bg-white text-center wp-bs-4-jumbotron border-bottom">
 			<div class="container">
-
 				<h1 class="jumbotron-heading"><?php echo wp_kses_post( get_theme_mod( 'blog_cover_title' ) ); ?></h1>
 				<p class="lead text-muted"><?php echo wp_kses_post( get_theme_mod( 'blog_cover_lead' ) ); ?></p>
 				<?php if( get_theme_mod( 'blog_cover_btn_text' ) ) : ?><a href="<?php echo esc_url( get_theme_mod( 'blog_cover_btn_link' ) ); ?>" class="btn btn-primary"><?php echo esc_html( get_theme_mod( 'blog_cover_btn_text' ) ); ?></a><?php endif; ?>
@@ -55,13 +54,11 @@ get_header(); ?>
 							get_template_part( 'posts-slider', 'feature' );
 						}
 
-						/* Start the Loop */
-						while ( have_posts() ) : the_post();
+						?>
 
-							// Include the Post-Format-specific template for the content.
-							get_template_part( 'template-parts/content', get_post_format() );
-
-						endwhile;
+						<?php get_template_part('template-parts/catcards');?>
+						
+						<?php
 
 						the_posts_navigation( array(
 							'next_text' => esc_html__( 'Newer Posts', 'wp-bootstrap-4' ),
