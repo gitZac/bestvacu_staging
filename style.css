@@ -13,30 +13,39 @@ Text Domain:  wp-bootstrap-child
 
 COLORS
     #08708A : LINKS AND BUTTONS
-    #032B2F : NAVBAR AND BUTTON HOVER
-    #D73A31 : TERTIARY ACCENT
+    #032B2F :  BUTTON HOVER
+    #D73A31 : HEADER ACCENT
 */
 
 
-/* Global */
+/* GLOBAL */
 
+.container-cmp-wrapper{
+    display: inline-block;
+    width: 100%;
+    padding-top: 32px;
+}
 
 /* NAVBAR */
 
+.navbar .nav-link{
+    opacity: 1 !important;
+    color:#fff !important;
+}
+
+.site-header{
+    box-shadow: 0 3px 35px 0 rgba(27,24,21,.23);
+}
+
+.dropdown-menu .nav-link{
+    color:#000 !important}
+
 /* Hiding Navbar for plugin */
 
-#site-navigation{
-    /* display: none; */
+#masthead{
+    background-color: #D73A31;
 }
 
-#site-navigation .nav-link{
-    color:#fff;
-    opacity: 1;
-}
-
-.navbar.bg-dark-custom{
-    background-color: #032b2f;
-}
 
 /* End navbar */
 
@@ -48,15 +57,7 @@ COLORS
 
 .btn-primary{
     padding:11px 27px 12px;
-    background-color:#08708A !important;
-    border-color:#08708A !important;
     text-transform: uppercase;
-    color:#fff !important;
-}
-
-.btn-primary:hover{
-    /* background-color:#032b2f!important;
-    border-color: #032b2f!important; */
 }
 
 .button-animation{
@@ -139,6 +140,31 @@ COLORS
 }
 
 /* Float Boxes -- right of slider */
+
+/* Main-title (dividers) */
+
+.main-title{
+    text-align: center;
+    position: relative;
+}
+
+h2.main-title{
+    padding: 0 0 18px;
+    margin-bottom:42px;
+    border-bottom:1px solid;
+    border-color:#08708a;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.icon{
+    color:#08708a;
+}
+
+.main-title__title{
+    display:block;
+}
+
 
 /* Animation Hover */
 
@@ -294,8 +320,4 @@ COLORS
     text-decoration: none;
     font-weight: 300;
     text-align: left;
-}
-
-.btn-link, .btn-outline-primary, .content-area .sp-the-post .entry-header .entry-title a:hover, a{
-    color:#08708A;
 }

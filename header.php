@@ -26,7 +26,7 @@
 
 	<header id="masthead" class="site-header <?php if ( get_theme_mod( 'sticky_header', 0 ) ) : echo 'sticky-top'; endif; ?>">
 		<nav id="site-navigation" class="main-navigation navbar navbar-expand-lg navbar-dark bg-dark-custom">
-			<?php if( get_theme_mod( 'header_within_container', 0 ) ) : ?><div class="container"><?php endif; ?>
+			<div class="container">
 				<?php the_custom_logo(); ?>
 
 				<div class="site-branding-text">
@@ -51,6 +51,7 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primary-menu-wrap" aria-controls="primary-menu-wrap" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
+
 				<?php
 					wp_nav_menu( array(
 						'theme_location'  => 'menu-1',
@@ -65,7 +66,8 @@
 			            'walker'          => new WP_bootstrap_4_walker_nav_menu()
 					) );
 				?>
-			<?php if( get_theme_mod( 'header_within_container', 0 ) ) : ?></div><!-- /.container --><?php endif; ?>
+				<?php get_search_form(); ?>
+			</div><!-- /.container -->
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
