@@ -17,13 +17,39 @@ COLORS
     #D73A31 : HEADER ACCENT
 */
 
-
 /* GLOBAL */
-
 .container-cmp-wrapper{
     display: inline-block;
     width: 100%;
     padding-top: 32px;
+}
+
+.u-screen-reader-text{
+    display:none;
+}
+
+/* SEARCH FORM */
+.c-search-form {
+    position: relative;
+    padding-right: 44px;
+}
+.c-search-form__button {
+    position: absolute;
+    right: 0;
+    top: -1px;
+    height: 40px;
+    color:#333;
+    width: 50px;
+    background-color:#D73A31;
+    border-color: #D73A31;
+}
+.c-search-form__button i{
+    color:#fff;
+    font-size: 18px;
+}
+
+.c-search-form__label {
+    margin-bottom: 0;
 }
 
 /* NAVBAR */
@@ -31,6 +57,10 @@ COLORS
 .navbar .nav-link{
     opacity: 1 !important;
     color:#fff !important;
+}
+
+#primary-menu-wrap{
+    padding-right: 20px;
 }
 
 .site-header{
@@ -43,7 +73,7 @@ COLORS
 /* Hiding Navbar for plugin */
 
 #masthead{
-    background-color: #D73A31;
+    background-color: #08708A;
 }
 
 
@@ -152,13 +182,13 @@ h2.main-title{
     padding: 0 0 18px;
     margin-bottom:42px;
     border-bottom:1px solid;
-    border-color:#08708a;
+    border-color:#D73A31;
     font-size: 32px;
     font-weight: 400;
 }
 
 .icon{
-    color:#08708a;
+    color:#D73A31;
 }
 
 .main-title__title{
