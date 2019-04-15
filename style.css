@@ -29,9 +29,16 @@ COLORS
 }
 
 /* SEARCH FORM */
+
+@media(min-width:800px){
+    .c-search-form{
+        position: relative;
+        padding-right: 44px;
+        display: block !important;
+    }
+}
 .c-search-form {
-    position: relative;
-    padding-right: 44px;
+    display: none;
 }
 .c-search-form__button {
     position: absolute;
@@ -40,8 +47,8 @@ COLORS
     height: 40px;
     color:#333;
     width: 50px;
-    background-color:#D73A31;
-    border-color: #D73A31;
+    background-color:#08708A;
+    border-color: #08708A;
 }
 .c-search-form__button i{
     color:#fff;
@@ -54,28 +61,78 @@ COLORS
 
 /* NAVBAR */
 
+/* JS Classes */
+
+.scrolled-nav{
+    padding-top:0!important;
+    padding-bottom:0!important;
+} /* End JS classes */
+
+#masthead{
+    background-color: #e8e8e8;
+    box-shadow:1px 5px 21px rgba(233,233,233,.95));
+    -webkit-transition:all .5s;
+    transition: all .5s;
+
+}
+
+@media(min-width:800px){
+    #masthead{
+        padding-bottom:1rem;
+        padding-top:1rem;
+    }
+}
+
 .navbar .nav-link{
     opacity: 1 !important;
-    color:#fff !important;
+    color:#000 !important;
+    font-size: 1.2rem;
+    padding:0;
+    text-align: center;
+}
+
+.navbar .nav-link:hover{
+    color:#08708a !important;
+}
+
+@media(min-width:800px){
+    .navbar-expand-lg .navbar-nav .nav-link{
+        padding-left:1rem;
+        padding-right:1.5rem;
+    }
+}
+
+.dropdown-menu .nav-link{
+    color:#000 !important;
 }
 
 #primary-menu-wrap{
-    padding-right: 20px;
+    background-color:#fff;
+    margin-top:1rem;
+    padding:1rem;
 }
+
+@media(min-width:800px){
+    #primary-menu-wrap{
+        padding-right: 20px;
+        padding:0;
+        background-color:#e8e8e8;
+    }
+}
+
+.nav-item{
+    margin-bottom: 1rem;
+}
+
 
 .site-header{
     box-shadow: 0 3px 35px 0 rgba(27,24,21,.23);
 }
 
-.dropdown-menu .nav-link{
-    color:#000 !important}
-
-/* Hiding Navbar for plugin */
-
-#masthead{
-    background-color: #08708A;
+.navbar-toggler{
+   background-color:#08708A;
+   border-radius: 0;
 }
-
 
 /* End navbar */
 
@@ -182,13 +239,13 @@ h2.main-title{
     padding: 0 0 18px;
     margin-bottom:42px;
     border-bottom:1px solid;
-    border-color:#D73A31;
+    border-color:#08708A;
     font-size: 32px;
     font-weight: 400;
 }
 
 .icon{
-    color:#D73A31;
+    color:#08708A;
 }
 
 .main-title__title{
@@ -308,6 +365,8 @@ h2.main-title{
     width:100%;
     position: relative;
     transition: all 0.3s ease-in-out;
+    max-height: 20rem;
+    overflow: hidden;
 }
 
 .catcard__inner:hover .catcard__cat-image img{
@@ -351,3 +410,4 @@ h2.main-title{
     font-weight: 300;
     text-align: left;
 }
+

@@ -34,7 +34,8 @@
                                     <div class="catcard__upper">
                                         <a href="<?php get_permalink($category->term_id); ?>" class="cardcard__link">
                                             <div class="catcard__cat-image">
-                                                <img src="https://placeimg.com/640/480/any">
+                                                <?php the_post_thumbnail($size, $attr); ?>
+
                                                 <div class="catcard__cat-title-container">
                                                     <h4 class="catcard__cat-title"><?php echo $category->name ?></h4>
                                                 </div>

@@ -26,7 +26,7 @@
 
 	<header id="masthead" class="site-header <?php if ( get_theme_mod( 'sticky_header', 0 ) ) : echo 'sticky-top'; endif; ?>">
 		<nav id="site-navigation" class="main-navigation navbar navbar-expand-lg navbar-dark bg-dark-custom">
-			<div class="container">
+			<div class="container-fluid">
 				<?php the_custom_logo(); ?>
 
 				<div class="site-branding-text">
@@ -59,7 +59,7 @@
 						'container'       => 'div',
 						'container_class' => 'collapse navbar-collapse',
 						'container_id'    => 'primary-menu-wrap',
-						'menu_class'      => 'navbar-nav ml-auto',
+						'menu_class'      => 'navbar-nav',
 			            'fallback_cb'     => '__return_false',
 			            'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 			            'depth'           => 2,

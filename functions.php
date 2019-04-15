@@ -16,7 +16,19 @@ $parent_style = 'parent-style';
 		get_stylesheet_directory_uri() . '/style.css',
 		array( $parent_style ),
 		wp_get_theme()->get('Version') );
+
+
 	}
 add_action( 'wp_enqueue_scripts', 'wp_bootstrap_child_enqueue_child_styles' );
+
+
+function wp_bootstrap_child_enqueue_child_scripts() {
+
+	wp_enqueue_script( 'navbar-scroll', get_stylesheet_directory_uri() . '/js/navbarscroll.js', array( 'jquery' ), '1.0', true );
+
+}
+
+add_action('wp_enqueue_scripts', 'wp_bootstrap_child_enqueue_child_scripts');
+
 
 /*Write here your own functions */
