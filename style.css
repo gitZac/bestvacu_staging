@@ -12,9 +12,9 @@ Text Domain:  wp-bootstrap-child
 /* 
 
 COLORS
-    #08708A : LINKS AND BUTTONS
-    #032B2F :  BUTTON HOVER
-    #D73A31 : HEADER ACCENT
+    
+    PRIMARY: #9aca39 -- Only navbar
+    SECONDARY (Accent): #f5a85c
 */
 
 /* GLOBAL */
@@ -26,6 +26,10 @@ COLORS
 
 .u-screen-reader-text{
     display:none;
+}
+
+*:focus {
+    outline: none;
 }
 
 /* SEARCH FORM */
@@ -47,8 +51,8 @@ COLORS
     height: 40px;
     color:#333;
     width: 50px;
-    background-color:#08708A;
-    border-color: #08708A;
+    background-color: #9aca39;
+    border-color:  #9aca39;
 }
 .c-search-form__button i{
     color:#fff;
@@ -66,14 +70,19 @@ COLORS
 .scrolled-nav{
     padding-top:0!important;
     padding-bottom:0!important;
-} /* End JS classes */
+} 
+
+.scrolled-logo{
+    height: 50px;
+}
+
+/* End JS classes */
 
 #masthead{
-    background-color: #e8e8e8;
+    background-color: #fff;
     box-shadow:1px 5px 21px rgba(233,233,233,.95));
     -webkit-transition:all .5s;
     transition: all .5s;
-
 }
 
 @media(min-width:800px){
@@ -85,14 +94,14 @@ COLORS
 
 .navbar .nav-link{
     opacity: 1 !important;
-    color:#000 !important;
+    color:#9aca39 !important;
     font-size: 1.2rem;
     padding:0;
     text-align: center;
 }
 
 .navbar .nav-link:hover{
-    color:#08708a !important;
+    color: #f5a85c!important;
 }
 
 @media(min-width:800px){
@@ -116,7 +125,7 @@ COLORS
     #primary-menu-wrap{
         padding-right: 20px;
         padding:0;
-        background-color:#e8e8e8;
+        background-color:#fff;
     }
 }
 
@@ -130,7 +139,7 @@ COLORS
 }
 
 .navbar-toggler{
-   background-color:#08708A;
+   background-color:#9aca39;
    border-radius: 0;
 }
 
@@ -239,19 +248,18 @@ h2.main-title{
     padding: 0 0 18px;
     margin-bottom:42px;
     border-bottom:1px solid;
-    border-color:#08708A;
+    border-color:#9aca39;
     font-size: 32px;
     font-weight: 400;
 }
 
 .icon{
-    color:#08708A;
+    color:#9aca39;
 }
 
 .main-title__title{
     display:block;
 }
-
 
 /* Animation Hover */
 
@@ -410,4 +418,3 @@ h2.main-title{
     font-weight: 300;
     text-align: left;
 }
-
