@@ -19,13 +19,15 @@
 
                     foreach ($categories as $category) { //Loop through the categories ?>
 
-                        <?php $args=array(
+                        <?php
+                        
+                        $args=array(
                             'showposts'=>3,
                             'category__in' => array($category->term_id),
                             'caller_get_posts'=>1
                         );
                                             
-                        $posts = get_posts($args);
+                        $posts = query_posts($args);
 
                         if($posts){ //If the category has posts... ?>
 
@@ -51,14 +53,16 @@
                                             setup_postdata($post); ?>
                                                 <p class="catcard__post-title"><a  class="catcard__post-link" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
 
-                                        <?php } //end innerforeach ?>
+                                                
+
+                                        <?php  } //end innerforeach ?>
                                     </div>
 
                                 </div><!-- ./ catcard__inner -->
 
                             </div><!-- ./ catcard  -->
 
-                        <?php } //endif ?>
+                        <?php }  //endif ?>
 
                 <?php } //end outer foreach ?>
 

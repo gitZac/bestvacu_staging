@@ -21,7 +21,6 @@ COLORS
 .container-cmp-wrapper{
     display: inline-block;
     width: 100%;
-    padding-top: 32px;
 }
 
 .u-screen-reader-text{
@@ -246,7 +245,7 @@ COLORS
 
 h2.main-title{
     padding: 0 0 18px;
-    margin-bottom:42px;
+    margin: 5rem 0rem 2.5rem 0;    
     border-bottom:1px solid;
     border-color:#9aca39;
     font-size: 32px;
@@ -417,4 +416,37 @@ h2.main-title{
     text-decoration: none;
     font-weight: 300;
     text-align: left;
+}
+
+/* BLOG POST */
+
+.blog-post{
+    max-width: 50rem;
+    margin:0 auto 4rem auto;
+    padding:0 5rem;
+}
+
+.blog-post__image{
+    overflow:hidden;
+    max-height: 20rem;
+    box-shadow: 1px 5px 21px rgba(233,233,233,.95);
+    -moz-box-shadow: 1px 5px 21px rgba(233,233,233,.95);
+}
+
+.blog-post__image img{
+    width:100%;
+    border-radius: 0.25rem;
+}
+ 
+
+.blog-post__content{
+    padding: 1rem 0;
+}
+
+.blog-post__title{
+
+}
+
+.blog-post__excerpt{
+
 }

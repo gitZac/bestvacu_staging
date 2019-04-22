@@ -38,7 +38,7 @@ get_header(); ?>
 			<?php endif; ?>
 				<div id="primary" class="content-area">
 					<main id="main" class="site-main">
-
+				
 					<?php
 					if ( have_posts() ) :
 
@@ -56,8 +56,16 @@ get_header(); ?>
 
 						?>
 
-						<?php get_template_part('template-parts/catcards');?>
-						
+						<?php get_template_part('template-parts/catcards'); wp_reset_postdata();?>
+
+						<h2 class="main-title">
+							<i class="icon fas fa-newspaper"></i>
+							<span class="main-title__title">Latest Articles</span>
+							<div class="site-navigation-search"></div>
+						</h2>
+
+						<?php get_template_part( 'template-parts/fp-content', get_post_format() ); ?>
+
 						<?php
 
 						the_posts_navigation( array(
