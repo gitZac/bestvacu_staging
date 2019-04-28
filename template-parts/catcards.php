@@ -1,5 +1,7 @@
 
+
 <div class="container">
+
     <div class="container-cmp-wrapper">
 
         <h2 class="main-title">
@@ -34,12 +36,14 @@
                             <div class="catcard col-md-3">
                                 <div class="catcard__inner">
                                     <div class="catcard__upper">
-                                        <a href="<?php get_permalink($category->term_id); ?>" class="cardcard__link">
+                                        <a href="<?php get_category_link($category) ?>" class="cardcard__link">
                                             <div class="catcard__cat-image">
                                                 <?php the_post_thumbnail($size, $attr); ?>
 
                                                 <div class="catcard__cat-title-container">
                                                     <h4 class="catcard__cat-title"><?php echo $category->name ?></h4>
+                                                    <p class="catcard__post-title"><a  class="catcard__post-link" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
+
                                                 </div>
                                             </div>
                                         </a>
@@ -47,13 +51,9 @@
 
                                     <div class="catcard__lower">
                                         <?php
-
                                             foreach($posts as $post){ //...Loop through all of the posts in that category
 
                                             setup_postdata($post); ?>
-                                                <p class="catcard__post-title"><a  class="catcard__post-link" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
-
-                                                
 
                                         <?php  } //end innerforeach ?>
                                     </div>
