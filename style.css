@@ -423,7 +423,6 @@ h2.main-title{
 .blog-post{
     max-width: 50rem;
     margin:0 auto 4rem auto;
-    padding:0 5rem;
 }
 
 .blog-post__image{
@@ -438,13 +437,13 @@ h2.main-title{
     border-radius: 0.25rem;
 }
  
-
 .blog-post__content{
     padding: 1rem 0;
 }
 
 .blog-post__title, .blog-post__title--single{
     color:#000;
+    font-size: 1.8rem;
 }
 
 .blog-post__title--single{
@@ -464,3 +463,13 @@ h2.main-title{
 .comments-area .wb-comment-form{
     padding:0;
 }
+
+/* MISC COMPONENTS */
+
+.page-header{
+    padding-bottom: 5rem;
+}
+.page-header__title{
+
+}
+

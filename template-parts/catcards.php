@@ -1,5 +1,3 @@
-
-
 <div class="container">
 
     <div class="container-cmp-wrapper">
@@ -14,10 +12,12 @@
 
                 <?php
 
-                    $categories = get_categories( array(
+                    $cat_args = array(
                         'orderby' => 'name',
-                        'order'   => 'ASC'
-                    ) );
+                        'order' => 'asc'
+                    );
+
+                    $categories = get_categories( array($cat_args) );
 
                     foreach ($categories as $category) { //Loop through the categories ?>
 
@@ -26,7 +26,7 @@
                         $args=array(
                             'showposts'=>3,
                             'category__in' => array($category->term_id),
-                            'caller_get_posts'=>1
+                            'caller_get_posts'=>1 //Just turns sticky posts off
                         );
                                             
                         $posts = query_posts($args);
@@ -36,24 +36,35 @@
                             <div class="catcard col-md-3">
                                 <div class="catcard__inner">
                                     <div class="catcard__upper">
-                                        <a href="<?php get_category_link($category) ?>" class="cardcard__link">
-                                            <div class="catcard__cat-image">
-                                                <?php the_post_thumbnail($size, $attr); ?>
+
+                                        <a href="<?php echo get_category_link($category->term_id); ?>" class="cardcard__link">
+
+                                            <div class="catcard__cat-image">                   
+                                                <?php 
+                                                    $term = get_queried_object();
+                                                    $image = get_field('image', $term);
+                                                ?>
+
+                                                <img class="" src="<?php echo $image['url']; ?>">
 
                                                 <div class="catcard__cat-title-container">
                                                     <h4 class="catcard__cat-title"><?php echo $category->name ?></h4>
-                                                    <p class="catcard__post-title"><a  class="catcard__post-link" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
-
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
 
                                     <div class="catcard__lower">
+
                                         <?php
                                             foreach($posts as $post){ //...Loop through all of the posts in that category
-
+                                                
                                             setup_postdata($post); ?>
+
+                                            <ul class="catcard__post-list">
+                                                <li class="catcard__post-title"><a  class="catcard__post-link" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>                                          
+                                            </ul>
+    
 
                                         <?php  } //end innerforeach ?>
                                     </div>

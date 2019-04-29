@@ -56,6 +56,9 @@ get_header(); ?>
 
 						?>
 
+						<?php get_template_part('template-parts/catcards');?>
+
+
 						<h2 class="main-title">
 							<i class="icon fas fa-newspaper"></i>
 							<span class="main-title__title">Latest Articles</span>
@@ -76,8 +79,6 @@ get_header(); ?>
 						get_template_part( 'template-parts/content', 'none' );
 
 					endif; ?>
-
-					<?php get_template_part('template-parts/catcards'); wp_reset_postdata();?>
 
 					</main><!-- #main -->
 				</div><!-- #primary -->
