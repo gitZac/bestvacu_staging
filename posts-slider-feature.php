@@ -11,6 +11,14 @@ if( $featured_post_ids && $featured_post_ids[0]!= '' ) {
 
 $featured_query = new WP_Query( $args );
 
+
+function wp_bootstrap_child_shorten_title( $title ) {
+    $newTitle = substr( $title, 0, 50 ); // Only take the first 20 characters
+
+    return $newTitle . " &hellip;"; // Append the elipsis to the text (...) 
+}
+add_filter( 'the_title', 'wp_bootstrap_child_shorten_title', 10, 1 );
+
 ?>
 
 <?php if ( $featured_query->have_posts() ) : ?>
@@ -58,65 +66,13 @@ $featured_query = new WP_Query( $args );
 
             <!-- START COLS -->
 
-<?php 
-    $args_2 = array(
-        'p' => '5918'
-    );
+            <?php get_template_part('template-parts/review-boxes') ?>
 
-    $query = new WP_Query($args_2);
-?>
 
-            <div class="review-boxes col-md-4">
-
-                <div class="review-boxes__single">
-                    <figure class="review-boxes__assets">
-                        <?php if ( $query->have_posts( ) ): ?>
-                            <?php while ($query->have_posts() ) : $query->the_post(); ?>
-
-                                <div class="review-boxes__content">
-                                    <h3 class="review-boxes__title"><?php the_title(); ?></h3>
-                                    <p class="review-boxes__excerpt">Excerpt needs hooked!</p>
-                                    <a href="<?php the_permalink(); ?>" class="review-boxes__link">Read More</a>
-                                </div>
-
-                                <?php the_post_thumbnail(); ?>
-
-                            <?php endwhile; ?>
-                        <?php endif; ?>
-
-                    </figure>
-                </div>
-
-            <?php 
-                $args_3 = array(
-                    'page_id' => '5'
-                );
-
-                $query = new WP_Query($args_3);
-            ?>
-
-                <div class="review-boxes__single">
-                    <figure class="review-boxes__assets">
-                        <?php if ( $query->have_posts( ) ): ?>
-                            <?php while ($query->have_posts() ) : $query->the_post(); ?>
-
-                                <div class="review-boxes__content">
-                                    <h3 class="review-boxes__title"><?php the_title(); ?></h3>
-                                    <p class="review-boxes__excerpt">Excerpt needs hooked!</p>
-                                    <a href="<?php the_permalink(); ?>" class="review-boxes__link">Read More</a>
-                                </div>
-
-                                <?php the_post_thumbnail(); ?>
-
-                            <?php endwhile; ?>
-                        <?php endif; ?>
-
-                    </figure>
-                </div>
-
-            </div>
-        
         </div> <!--END ROW  -->
     </div> <!--END CONTAINER  -->
    
-<?php endif; ?>
+<?php endif; remove_filter( 'the_title', 'wp_bootstrap_child_shorten_title' );
+?>
+
+

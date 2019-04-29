@@ -52,3 +52,8 @@ add_filter( 'get_the_archive_title', function ($title) {
 });
 
 /*Write here your own functions */
+
+function wpdocs_custom_excerpt_length( $length ) {
+    return 5;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
