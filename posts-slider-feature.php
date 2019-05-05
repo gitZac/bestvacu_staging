@@ -11,20 +11,13 @@ if( $featured_post_ids && $featured_post_ids[0]!= '' ) {
 
 $featured_query = new WP_Query( $args );
 
-
-function wp_bootstrap_child_shorten_title( $title ) {
-    $newTitle = substr( $title, 0, 50 ); // Only take the first 20 characters
-
-    return $newTitle . " &hellip;"; // Append the elipsis to the text (...) 
-}
-add_filter( 'the_title', 'wp_bootstrap_child_shorten_title', 10, 1 );
-
 ?>
 
 <?php if ( $featured_query->have_posts() ) : ?>
 
     <div class="container no-padding">
-        <div class="row">
+
+        <div class="row row-eq-height">
 
             <div id="wp-bp-posts-slider" class="col-md-8 no-padding carousel slide rounded" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -70,9 +63,10 @@ add_filter( 'the_title', 'wp_bootstrap_child_shorten_title', 10, 1 );
 
 
         </div> <!--END ROW  -->
+        
     </div> <!--END CONTAINER  -->
    
-<?php endif; remove_filter( 'the_title', 'wp_bootstrap_child_shorten_title' );
+<?php endif; 
 ?>
 
 

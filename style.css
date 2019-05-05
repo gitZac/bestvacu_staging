@@ -164,7 +164,7 @@ COLORS
 
 /* Slider modifications */
 
-/* Animations onHover */
+    /* Animations onHover */
 
 #wp-bp-posts-slider:hover .carousel-caption h5{
     transform: translateY(0);
@@ -234,8 +234,6 @@ COLORS
     transition: all 0.3s ease-in-out;
 }
 
-/* Float Boxes -- right of slider */
-
 /* Main-title (dividers) */
 
 .main-title{
@@ -260,78 +258,73 @@ h2.main-title{
     display:block;
 }
 
-/* Animation Hover */
+/* PROFILE CARD */
 
-.review-boxes__single:hover{
-    transform: translateY(0);
-    box-shadow: 1px 5px 41px rgba(233,233,233,.95);
+.card.profile-card-2{
+    max-height: 400px;
 }
 
-.review-boxes{ /* Container */
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    align-self: center;
+.profile-card-2 .card-img-block{
+    float:left;
+    width:100%;
+    height:150px;
+    overflow:hidden;
 }
-
-.review-boxes__single{
-    background-color: #fff;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    position: relative;
-    overflow: hidden;
-
-    /* Animation */
-    transition: all 0.3s ease-in-out;
-    transform: translateY(.2rem);
-    box-shadow: 1px 5px 21px rgba(233,233,233,.95);
+.profile-card-2 .card-body{
+    position:relative;
 }
-
-.review-boxes__assets{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    justify-content: center;
+.profile-card-2 .profile {
+  border-radius: 50%;
+  position: absolute;
+  top: -42px;
+  left: 15%;
+  max-width: 75px;
+  border: 3px solid rgba(255, 255, 255, 1);
+  -webkit-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
 }
-
-.review-boxes img{
-    height: 7.5rem;
-    width: 7.5rem;
-    border-radius: 5%;
+.profile-card-2 h5{
+    font-weight:600;
+    color:#9aca39;
 }
-
-
-.review-boxes__title{
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: .4rem;
-    margin-right: 1rem;
+.profile-card-2 .card-text{
+    font-weight:300;
+    font-size:15px;
 }
-
-.review-boxes__excerpt{
-    font-size: .8rem;
+.profile-card-2 .icon-block{
+    float:left;
+    width:100%;
 }
-
-.review-boxes__content{
-    padding-right:1rem;
+.profile-card-2 .icon-block a{
+    text-decoration:none;
+}
+.profile-card-2 i {
+  display: inline-block;
+    font-size: 16px;
+    color: #9aca39;
+    text-align: center;
+    border: 1px solid #9aca39;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    margin:0 5px;
+}
+.profile-card-2 i:hover {
+  background-color:#9aca39;
+  color:#fff;
 }
 
 /* Category Cards */
 
 .catcard{
-    padding: 0 10px 36px;
+    padding: 0 1rem 5rem;
 }
 
 .catcard__inner{
     text-align: center;
+    min-height: 30rem;
+    overflow: hidden;
     background-color: #fff;
     -webkit-box-shadow: 1px 5px 21px rgba(233,233,233,.95);
     box-shadow: 1px 5px 21px rgba(233,233,233,.95);
@@ -364,7 +357,7 @@ h2.main-title{
     width: 100%;
     height: 100%;
     z-index: 0;
-    background: linear-gradient(to bottom,rgba(29,29,29,0) 0%,rgba(29,29,29,0) 39%,rgba(29,29,29,.75) 100%);
+    background: linear-gradient(to bottom,rgba(29,29,29,0) 0%,rgba(29,29,29,0) 25%,rgba(0,0,0,1) 100%);
     /* transition: background 1s ease-in-out; */
 }
 
@@ -372,7 +365,7 @@ h2.main-title{
     width:100%;
     position: relative;
     transition: all 0.3s ease-in-out;
-    max-height: 20rem;
+    max-height: 15rem;
     overflow: hidden;
 }
 
@@ -398,8 +391,8 @@ h2.main-title{
 
 .catcard__cat-title{
     color:#fff;
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1.4rem;
+    font-weight: 600;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -426,14 +419,14 @@ h2.main-title{
 }
 
 .blog-post__image{
-    overflow:hidden;
-    max-height: 20rem;
     box-shadow: 1px 5px 21px rgba(233,233,233,.95);
     -moz-box-shadow: 1px 5px 21px rgba(233,233,233,.95);
 }
 
-.blog-post__image img{
+.blog-post img{
     width:100%;
+    object-fit: contain;
+    max-height: 30rem;
     border-radius: 0.25rem;
 }
  
@@ -473,3 +466,23 @@ h2.main-title{
 
 }
 
+.footer-widgets{
+    -webkit-transition:all .5s;
+    transition: all .5s;
+}
+
+.footer-widgets ul li{
+    list-style: none !important;
+}
+
+.footer-widgets .widget ul{
+    padding:0;
+}
+
+.footer-widgets a{
+    text-decoration: underline;
+}
+
+.footer-widgets a:hover{
+    color: #b8ff20 !important;
+}

@@ -51,9 +51,12 @@ add_filter( 'get_the_archive_title', function ($title) {
 
 });
 
-/*Write here your own functions */
 
-function wpdocs_custom_excerpt_length( $length ) {
-    return 5;
-}
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+// function wp_bootstrap_child_shorten_title( $title ) {
+//     $newTitle = substr( $title, 0, 50 ); // Only take the first 20 characters
+
+//     return $newTitle . " &hellip;"; // Append the elipsis to the text (...) 
+// }
+// add_filter( 'the_title', 'wp_bootstrap_child_shorten_title', 10, 1 );
+
+//remove_filter( 'the_title', 'wp_bootstrap_child_shorten_title' );

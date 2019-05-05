@@ -4,7 +4,7 @@
 
         <h2 class="main-title">
             <i class="icon fas fa-archive"></i>
-            <span class="main-title__title">Review Categories</span>
+            <span class="main-title__title">Menu</span>
             <div class="site-navigation-search"></div>
         </h2>
 
@@ -33,7 +33,7 @@
 
                         if($posts){ //If the category has posts... ?>
 
-                            <div class="catcard col-md-3">
+                            <div class="catcard col-md-4">
                                 <div class="catcard__inner">
                                     <div class="catcard__upper">
 
@@ -62,7 +62,17 @@
                                             setup_postdata($post); ?>
 
                                             <ul class="catcard__post-list">
-                                                <li class="catcard__post-title"><a  class="catcard__post-link" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>                                          
+                                                <li class="catcard__post-title">
+                                                <a  class="catcard__post-link" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+                                                    <?php
+                                                    $thetitle = $post->post_title; /* or you can use get_the_title() */
+                                                    $getlength = strlen($thetitle);
+                                                    $thelength = 45;
+                                                    echo substr($thetitle, 0, $thelength);
+                                                    if ($getlength > $thelength) echo "...";
+                                                    ?>
+                                                </a>
+                                                </li>                                          
                                             </ul>
     
 
